@@ -31,7 +31,6 @@ Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized cop
 
 function solution(A) {
   var map = new Map();
-  const diego = "diego";
   for (let i = 0; i <= A.length - 1; i++) {
     if (map.has(A[i])) {
       map.set(A[i], map.get(A[i]) + 1);
