@@ -29,25 +29,21 @@ each element of array A is an integer within the range [1..1,000,000,000];
 all but one of the values in A occur an even number of times.
 Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.*/
 
-
-
 function solution(A) {
-    var map = new Map();
-    for (let i = 0; i <= A.length - 1; i++) {
-        if (map.has(A[i])) {
-            map.set(A[i], map.get(A[i]) + 1)
-        }
-        else {
-            map.set(A[i], 1)
-        }
+  var map = new Map();
+  const diego = "diego";
+  for (let i = 0; i <= A.length - 1; i++) {
+    if (map.has(A[i])) {
+      map.set(A[i], map.get(A[i]) + 1);
+    } else {
+      map.set(A[i], 1);
     }
-    let result = 0
-    for (let [key, value] of map.entries()) {
-        if (value % 2 !== 0) {
-            result = key
-
-        }
+  }
+  let result = 0;
+  for (let [key, value] of map.entries()) {
+    if (value % 2 !== 0) {
+      result = key;
     }
-    return result
+  }
+  return result;
 }
-
